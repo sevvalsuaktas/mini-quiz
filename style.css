@@ -2,11 +2,12 @@ body {
     background: url('https://sevvalsuaktas.github.io/mini-quiz/6031903.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Segoe UI', sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
+    padding: 20px;
 }
 
 .container {
@@ -16,14 +17,20 @@ body {
 
 .card {
     border-radius: 1rem;
-    background: #ffffe6;
+    background: rgba(255, 255, 230, 0.95);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-height: 90vh;  /* 💡 Kartın çok uzamasını önler */
+    overflow-y: auto;   /* 💡 İçerik taşarsa kaydırma */
 }
 
 #options button {
     margin: 8px 0;
     width: 100%;
     transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    padding: 10px;
 }
 
 #options button:hover {
@@ -52,18 +59,16 @@ body {
     margin-top: 20px;
 }
 
-/* Doğru cevap efekti */
 .correct-flash {
     animation: correctFlash 0.5s ease-out;
 }
 
 @keyframes correctFlash {
     0%   { background-color: #d4edda; }
-    50%  { background-color: #73bf76; }    /*#a5d6a7*/
+    50%  { background-color: #73bf76; }
     100% { background-color: transparent; }
 }
 
-/* Yanlış cevap titreme efekti */
 .wrong-shake {
     animation: wrongShake 0.4s ease;
 }
@@ -76,25 +81,22 @@ body {
     100% { transform: translateX(0); }
 }
 
-@media only screen and (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-    }
-}
-
 @media (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-        padding: 20px; /* Etrafına biraz boşluk */
-    }
-
     .container {
         max-width: 90%;
-        padding: 10px;
     }
 
     .card {
-        padding: 15px;
-        border-radius: 0.8rem;
+        padding: 20px;
+        max-height: 85vh;
+    }
+
+    #options button {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+
+    #question {
+        font-size: 1.2rem;
     }
 }
