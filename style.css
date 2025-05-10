@@ -81,3 +81,9 @@ body {
         background-attachment: scroll;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
