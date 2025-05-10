@@ -1,0 +1,79 @@
+body {
+    background: url('images/6031903.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+}
+
+.card {
+    border-radius: 1rem;
+    background: #ffffe6;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#options button {
+    margin: 8px 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+#options button:hover {
+    transform: scale(1.03);
+    background-color: #e0e0e0;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#progress-bar {
+    background-color: #ffb3b3 !important;
+}
+
+#result {
+    color: #ff8080;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Doğru cevap efekti */
+.correct-flash {
+    animation: correctFlash 0.5s ease-out;
+}
+
+@keyframes correctFlash {
+    0%   { background-color: #d4edda; }
+    50%  { background-color: #73bf76; }    /*#a5d6a7*/
+    100% { background-color: transparent; }
+}
+
+/* Yanlış cevap titreme efekti */
+.wrong-shake {
+    animation: wrongShake 0.4s ease;
+}
+
+@keyframes wrongShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+
