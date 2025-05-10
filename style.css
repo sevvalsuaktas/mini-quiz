@@ -83,7 +83,18 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        padding: 20px; /* Etrafına biraz boşluk */
+    }
+
     .container {
         max-width: 90%;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+        border-radius: 0.8rem;
     }
 }
