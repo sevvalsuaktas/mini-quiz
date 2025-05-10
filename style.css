@@ -48,7 +48,7 @@ body {
 }
 
 #progress-bar {
-    background-color: #ffb3b3 !important;
+    background-color: #134552 !important;
 }
 
 #result {
@@ -100,3 +100,13 @@ body {
         font-size: 1.2rem;
     }
 }
+
+#question-counter {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#result {
+    font-size: 14px;
+}
+  
