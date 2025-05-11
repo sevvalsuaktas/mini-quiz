@@ -11,28 +11,43 @@
 <div class="container mt-5">
     <div class="card shadow-lg border-0">
         <div class="card-body text-center">
-            <h3 class="mb-4 text-primary">🎓 Mini Quiz</h3>
+            <!-- Başlangıç ekranı: Zorluk seçimi -->
+            <div id="start-screen">
+                <h3 class="text-primary mb-3">🎯 Quiz'e Başlamadan Önce</h3>
+                <p class="mb-3">Lütfen bir zorluk seviyesi seçin:</p>
+                <!-- Zorluk seviyesi seçimi için dropdown -->
+                <select id="difficulty-select" class="form-select mb-3">
+                    <option value="easy">🟢 Kolay</option>
+                    <option value="medium">🟠 Orta</option>
+                    <option value="hard">🔴 Zor</option>
+                </select>
+                <!-- Quiz başlatma butonu -->
+                <button id="start-btn" class="btn btn-success">Quiz'e Başla 🚀</button>
+            </div>
+            <!-- Quiz ekranı: Sorular ve seçenekler -->
+            <div id="quiz-screen" style="display: none;">
+                <h3 class="mb-4 text-primary">🎓 Mini Quiz</h3>
 
-            <!-- İLERLEME ÇUBUĞU -->
-            <div class="progress mb-4" style="height: 25px;">
-                <div id="progress-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%">
-                    0%
+                <!-- İlerleme çubuğu -->
+                <div class="progress mb-4" style="height: 25px;">
+                    <div id="progress-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%">
+                        0%
+                    </div>
                 </div>
-            </div>
 
-            <div id="quiz-container" class="fade-in">
-                <!-- Soru sayacı -->
-                <div id="question-counter" class="text-muted mb-2 text-center"></div>
-                <div id="timer" class="text-danger fw-bold mb-3 text-center"></div>
-                <p id="question" class="fw-bold fs-5 text-dark"></p>
-                <div id="options" class="mb-3"></div>
-            </div>
+                <div id="quiz-container" class="fade-in">
+                    <div id="question-counter" class="text-muted mb-2 text-center"></div> <!-- Soru sayacı -->
+                    <div id="timer" class="text-danger fw-bold mb-3 text-center"></div> <!-- Geriye kalan süre -->
+                    <p id="question" class="fw-bold fs-5 text-dark"></p> <!-- Soru metni -->
+                    <div id="options" class="mb-3"></div> <!-- Seçenekler -->
+                </div>
 
-            <div id="result" class="text-center mt-4" style="display: none;"></div>
+                <!-- Sonuç ekranı -->
+                <div id="result" class="text-center mt-4" style="display: none;"></div>
+            </div>
         </div>
     </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="script.js"></script>
 </body>
