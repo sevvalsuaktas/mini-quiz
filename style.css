@@ -1,6 +1,6 @@
 /* Sayfa arka planı ve genel stil ayarları */
 body {
-    background: url('images/6031903.jpg') no-repeat center center fixed; /* Sayfanın arka planına sabit bir resim ekler, ortalanmış ve tekrar etmez */
+    background: url('6031903.jpg') no-repeat center center fixed; /* Sayfanın arka planına sabit bir resim ekler, ortalanmış ve tekrar etmez */
     background-size: cover; /* Arka plan resmi ekranı tamamen kaplayacak şekilde ölçeklenir */
     font-family: 'Segoe UI', sans-serif;
     min-height: 100vh; /* Sayfa yüksekliği en az ekran yüksekliği kadar olur (viewport height) */
