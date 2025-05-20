@@ -1,0 +1,122 @@
+/* Sayfa arka planı ve genel stil ayarları */
+body {
+    background: url('images/6031903.jpg') no-repeat center center fixed; /* Sayfanın arka planına sabit bir resim ekler, ortalanmış ve tekrar etmez */
+    background-size: cover; /* Arka plan resmi ekranı tamamen kaplayacak şekilde ölçeklenir */
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh; /* Sayfa yüksekliği en az ekran yüksekliği kadar olur (viewport height) */
+    display: flex; /* İçerikleri ortalamak için Flexbox kullanılır */
+    align-items: center; /* Dikeyde ortalama yapılır */
+    justify-content: center; /* Yatayda ortalama yapılır */
+    margin: 0; /* Sayfa kenar boşluklarını sıfırlar */
+    padding: 20px; /* Sayfa içine 20px boşluk bırakılır */
+}
+
+/* Konteyner boyut ayarları */
+.container {
+    width: 100%; /* Konteyner genişliği her zaman %100 olur */
+    max-width: 700px; /* Ancak en fazla 700px genişliğe ulaşabilir */
+}
+
+/* Kart stil ayarları */
+.card {
+    border-radius: 1rem; /* Kartın köşelerini yumuşatarak 1rem yuvarlatır */
+    background: rgba(255, 255, 230, 0.95); /* Açık sarıya yakın yarı şeffaf arka plan rengi */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Gölgelendirme efekti ile kartı hafif yukarı kaldırır gibi görünüm verir */
+    padding: 30px; /* Kartın iç kısmına 30px boşluk bırakır */
+    width: 100%; /* Kart genişliği %100 olur */
+    max-height: 90vh; /* Kart yüksekliği ekranın %90’ını geçemez */
+    overflow-y: auto; /* İçerik taşarsa dikeyde kaydırma çubuğu çıkar */
+}
+
+/* Seçenek butonları stil ayarları */
+#options button {
+    margin: 8px 0; /* Butonun üst-altına 8px boşluk ekler */
+    width: 100%; /* Butonlar tam genişlikte olur */
+    transition: all 0.3s ease-in-out; /* Geçiş animasyonları 0.3 saniyelik yumuşak bir geçişle uygulanır */
+    font-size: 1rem; /* Yazı boyutu 1rem olur (yaklaşık 16px) */
+    padding: 10px; /* İç kenarlardan 10px boşluk bırakır */
+}
+
+/* Seçenek butonları üzerine gelindiğinde efekt */
+#options button:hover {
+    transform: scale(1.03); /* Buton biraz büyür (yüzde 3) */
+    background-color: #e0e0e0; /* Arka plan rengi hafif gri olur */
+}
+
+/* Fade-in animasyonu tanımı için sınıf */
+.fade-in {
+    animation: fadeIn 0.4s ease-in; /* fadeIn animasyonunu 0.4 saniyede uygular */
+}
+
+/* Fade-in animasyon tanımı */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); } /* Başlangıçta görünmez ve 10px aşağıda */
+    to { opacity: 1; transform: translateY(0); } /* Sona doğru görünür olur ve yerine gelir */
+}
+
+/* İlerleme çubuğu rengi */
+#progress-bar {
+    background-color: #134552 !important;
+}
+
+/* Sonuç ekranı stil ayarları */
+#result {
+    color: #ff8080;
+    font-size: 14px; /* Yazı boyutu */
+    font-weight: bold;
+    text-align: center; /* Ortalanmış metin */
+    margin-top: 20px; /* Üstten 20px boşluk */
+}
+
+/* Doğru cevap animasyonu için sınıf */
+.correct-flash {
+    animation: correctFlash 0.5s ease-out; /* correctFlash animasyonunu 0.5 saniyede çalıştırır */
+}
+
+/* Doğru cevap animasyon tanımı */
+@keyframes correctFlash {
+    0%   { background-color: #d4edda; }
+    50%  { background-color: #73bf76; }
+    100% { background-color: transparent; } /* Arka plan rengini eski haline getirir */
+}
+
+/* Yanlış cevap animasyonu için sınıf */
+.wrong-shake {
+    animation: wrongShake 0.4s ease; /* wrongShake animasyonunu 0.4 saniyede çalıştırır */
+}
+
+/* Yanlış cevap animasyon tanımı (sağa-sola sallama efekti) */
+@keyframes wrongShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Soru sayacı stil ayarları */
+#question-counter {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Mobil cihazlar için stil ayarları (768px ve altı) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Mobilde konteyner genişliği ekranın %90’ı kadar olur */
+    }
+
+    .card {
+        padding: 20px; /* Kart içeriği mobilde biraz daha sıkışık olur */
+        max-height: 85vh; /* Kart yüksekliği mobilde biraz azaltılır */
+    }
+
+    #options button {
+        font-size: 0.95rem; /* Buton yazı boyutu biraz küçülür */
+        padding: 8px; /* İç boşluk azaltılır */
+    }
+
+    #question {
+        font-size: 1.2rem; /* Soru yazısı biraz küçülür */
+    }
+}
